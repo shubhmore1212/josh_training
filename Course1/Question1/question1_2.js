@@ -1,6 +1,4 @@
-const para=document.getElementById("demo");
-
 function testHandler(){
   const name=prompt("Enter your name");
-  para.innerHTML=`Your name is ${name}`
+  document.getElementById("demo").innerHTML=`Your name is ${name}`
 }
