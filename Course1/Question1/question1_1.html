@@ -1,0 +1,22 @@
+<!-- Javascript using script tags -->
+
+<html>
+  <head>
+    <title>JS Assignment-1</title>
+  </head>
+  <body>
+	<div>
+	  <h1>JS using internal script tag</h1>
+	  <button onclick="testHandler()">Click Me</button>
+	  <p id="demo"></p>
+	</div>
+	<script>
+	    function testHandler() {
+		  const name=prompt("enter your name");
+  		  document.getElementById("demo").innerHTML = `Your name ${name}`;
+		}
+    	</script>
+  </body>
+</html>
+
+
