@@ -6,7 +6,7 @@
     Print adult to the console if age is above 18
 */
 
-let age=NaN;
+let age=25;
 
 const ageChecker=(inputAge)=>{
     if(inputAge<0){
