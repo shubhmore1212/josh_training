@@ -13,28 +13,27 @@ Can you return from inside an if block? What impact does that have?
  We can specify any return value, if not specified then it is undefined.
 */
 
-for(let i=1;i<=5;i++){
-    if(i==3) return;
-    console.log("Case",i);
+for (let i = 1; i <= 5; i++) {
+  if (i == 3) return;
+  console.log("Case", i);
 }
-console.log("Unreachable code",ab());
-
+console.log("Unreachable code");
 
 /*
  We can pass a return value within a loop, as above mentioned it will act similar to break but also end the execution.
 */
 
-for(let i=1;i<=5;i++){
-    if(i==3) return;
-    console.log("Test",i);
+for (let i = 1; i <= 5; i++) {
+  if (i == 3) return;
+  console.log("Test", i);
 }
 
- /*
+/*
  We can use return in if block, if the condition is satisfied it will return the value (if value specified)
  and end the execution.
  */
 
- if(true){
-    return;
- }
- console.log("Unreachable Code");
+if (true) {
+  return;
+}
+console.log("Unreachable Code");

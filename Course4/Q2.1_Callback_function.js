@@ -1,13 +1,11 @@
-
-function test(callback){
-    return callback();
-}
-   
-function callbackFunc(){
-    console.log("Calling the callback function");
-    return 5;
+function test(callback) {
+  return callback();
 }
 
+function callbackFunc() {
+  console.log("Calling the callback function");
+  return 5;
+}
 
 //test(callbackFunc());
 //What happens when you return callback() from the test function?
