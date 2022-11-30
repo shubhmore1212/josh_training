@@ -14,5 +14,5 @@ console.log("Working of ++i", preIncrememtValue); //1
 
 //i++ can also be describe as follow:
 let postIncrementValue = 0;
-console.log("Working of i++", postIncrementValue);
-postIncrementValue = postIncrementValue + 1; //0
+console.log("Working of i++", postIncrementValue); //0
+postIncrementValue = postIncrementValue + 1;
