@@ -80,9 +80,9 @@ const filterByName = (name) => {
 
 console.log(filterByName("Townie"));
 
-const getByEmail = () => employeeDetails.map((emp) => emp.email);
+const getEmailIds = () => employeeDetails.map((emp) => emp.email);
 
-console.log(getByEmail());
+console.log(getEmailIds());
 
 const sortByDate = () => {
   return employeeDetails.sort((emp1, emp2) => {
