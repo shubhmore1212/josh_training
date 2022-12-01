@@ -74,13 +74,13 @@ const employeeDetails = [
 ];
 
 const filterByName = (name) => {
-  let reqEmployees = employeeDetails.filter((e) => e.first_name === name);
+  let reqEmployees = employeeDetails.filter((emp) => emp.first_name === name);
   return reqEmployees;
 };
 
 console.log(filterByName("Townie"));
 
-const getByEmail = () => employeeDetails.map((e) => e.email);
+const getByEmail = () => employeeDetails.map((emp) => emp.email);
 
 console.log(getByEmail());
 
@@ -96,7 +96,7 @@ const sortByDate = () => {
 console.log(sortByDate());
 
 const getById = (inputId) => {
-  return employeeDetails.filter((e) => e.id === inputId);
+  return employeeDetails.filter((emp) => emp.id === inputId);
 };
 
 console.log(getById(1));
