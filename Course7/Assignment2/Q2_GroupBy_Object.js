@@ -90,11 +90,15 @@ let users = [
 
 // console.log(groupBy(users, "gender"));
 
-const groupBy = (users, value) => {
+const groupBy = (users, key) => {
   return users.reduce((acc, object) => {
-    return Object.assign(acc, {
-      [object[value]]: (acc[object[value]] || []).concat(object),
-    });
+    const value = object[key];
+    if (acc[value]) {
+      acc[value].push(object);
+    } else {
+      acc[value] = [object];
+    }
+    return acc;
   }, {});
 };
 
