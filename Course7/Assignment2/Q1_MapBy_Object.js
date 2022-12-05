@@ -37,9 +37,11 @@ let users = [
 ];
 
 const mapBy = (users, value) => {
-  let result = {};
-  users.map((user) => (result[user[value]] = user));
-  return result;
+  const newObj = users.reduce((acc, curr) => {
+    acc[curr[value]] = curr;
+    return acc;
+  }, {});
+  return newObj;
 };
 
 console.log(mapBy(users, "first_name"));
