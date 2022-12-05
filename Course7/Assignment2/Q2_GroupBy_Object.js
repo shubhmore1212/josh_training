@@ -71,21 +71,31 @@ let users = [
   },
 ];
 
-const groupBy = (users, value) => {
-  let result = {};
-  let maleArr = [];
-  let femaleArr = [];
-  users.map((user) => {
-    if (user[value] === "Male") {
-      maleArr.push(user);
-    } else {
-      femaleArr.push(user);
-    }
-  });
+// const groupBy = (users, value) => {
+//   let result = {};
+//   let maleArr = [];
+//   let femaleArr = [];
+//   users.map((user) => {
+//     if (user[value] === "Male") {
+//       maleArr.push(user);
+//     } else {
+//       femaleArr.push(user);
+//     }
+//   });
 
-  result["Male"] = maleArr;
-  result["Female"] = femaleArr;
-  return result;
+//   result["Male"] = maleArr;
+//   result["Female"] = femaleArr;
+//   return result;
+// };
+
+// console.log(groupBy(users, "gender"));
+
+const groupBy = (users, value) => {
+  return users.reduce((acc, object) => {
+    return Object.assign(acc, {
+      [object[value]]: (acc[object[value]] || []).concat(object),
+    });
+  }, {});
 };
 
 console.log(groupBy(users, "gender"));
