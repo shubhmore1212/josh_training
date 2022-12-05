@@ -89,29 +89,29 @@ let userEmails = [
   },
 ];
 
-const mergeById = (arr1, arr2) => {
-  let newArr = arr1.concat(arr2);
+// const mergeById = (arr1, arr2) => {
+//   let newArr = arr1.concat(arr2);
 
-  let resArr = [];
+//   let resArr = [];
 
-  for (let i = 0; i < newArr.length; i++) {
-    let tempArr = newArr.filter((ele) => ele["id"] === newArr[i]["id"]);
-    let tempObj = { ...tempArr[0], ...tempArr[1] };
-    resArr.push(tempObj);
-  }
+//   for (let i = 0; i < newArr.length; i++) {
+//     let tempArr = newArr.filter((ele) => ele["id"] === newArr[i]["id"]);
+//     let tempObj = { ...tempArr[0], ...tempArr[1] };
+//     resArr.push(tempObj);
+//   }
 
-  let res = [];
-  let check = {};
+//   let res = [];
+//   let check = {};
 
-  resArr.forEach((el) => {
-    if (!check[el["id"]]) {
-      res.push(el);
-      check[el["id"]] = 1;
-    }
-  });
+//   resArr.forEach((el) => {
+//     if (!check[el["id"]]) {
+//       res.push(el);
+//       check[el["id"]] = 1;
+//     }
+//   });
 
-  return res;
-};
+//   return res;
+// };
 
 //console.log(mergeById(userNames, userEmails));
 
