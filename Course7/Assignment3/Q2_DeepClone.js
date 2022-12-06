@@ -7,7 +7,17 @@ const getClone = (object) => {
   for (let key of Object.keys(object)) {
     let value = object[key];
     if (typeof value === "object") {
-      tempObj[key] = getClone(value);
+      if (Array.isArray(value)) {
+        value.forEach((ele) => {
+          if (tempObj[key]) {
+            tempObj[key].push(ele);
+          } else {
+            tempObj[key] = [ele];
+          }
+        });
+      } else {
+        tempObj[key] = getClone(value);
+      }
     } else {
       tempObj[key] = value;
     }
