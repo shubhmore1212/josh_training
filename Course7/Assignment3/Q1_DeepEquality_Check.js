@@ -24,11 +24,7 @@ const student1 = {
   hobbies: ["football", "reading"],
 };
 
-const student2 = {
-  name: { fname: "Amar", lname: { momSurname: "kumar", dadSurname: "shetty" } },
-  rollno: 21,
-  hobbies: ["football", "reading"],
-};
+const student2 = JSON.parse(JSON.stringify(student1));
 
 const student3 = student1;
 
