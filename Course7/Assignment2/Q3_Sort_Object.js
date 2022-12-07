@@ -62,28 +62,12 @@ let users = [
   },
 ];
 
-const sortAscending = (users, key) => {
-  users.sort((prev, next) => {
-    if (prev[key] < next[key]) return -1;
-    if (prev[key] > next[key]) return 1;
-    return 0;
-  });
-};
-
-const sortDescending = (users, key) => {
-  users.sort((prev, next) => {
-    if (prev[key] > next[key]) return -1;
-    if (prev[key] < next[key]) return 1;
-    return 0;
-  });
-};
-
 const sort = (users, key, type) => {
-  if (type === "asc") {
-    sortAscending(users, key);
-  } else {
-    sortDescending(users, key);
-  }
+  users.sort((prev, next) => {
+    if (prev[key] > next[key]) return type === "asc" ? 1 : -1;
+    if (prev[key] < next[key]) return type === "asc" ? -1 : 1;
+    return 0;
+  });
 
   return users;
 };
