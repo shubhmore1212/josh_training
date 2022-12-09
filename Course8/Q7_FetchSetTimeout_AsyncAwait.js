@@ -7,24 +7,24 @@ Q7. Create a promise that makes a fetch call,
 
 //With Async and Await
 
-async function getUsers(url) {
-  let users = await fetch(url);
-  return users.json();
-}
+const getUsers = async (url) => await fetch(url);
 
-console.log("Start");
+const func = (url) => {
+  return new Promise((res, rej) => {
+    getUsers(url)
+      .then((users) => {
+        if (!users) {
+          rej("Not Found...");
+        }
+        console.log("receivedData");
+        setTimeout(() => {
+          res(users.json());
+        }, 2000);
+      })
+      .catch((err) => {
+        console.log("Custom Error ", err);
+      });
+  });
+};
 
-setTimeout(() => {
-  getUsers("https://reqres.in/api/users ").then((res) => console.log(res));
-}, 2000);
-
-console.log("End");
-
-try {
-  console.log("INSIDE TRY");
-  throw new Error();
-} catch (err) {
-  console.log("INSIDE CATCH");
-  throw new Error();
-}
-console.log("AFTER");
+func("https://reqres.in/api/users").then((users) => console.log(users));
