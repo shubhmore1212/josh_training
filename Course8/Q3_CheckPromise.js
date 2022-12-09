@@ -25,7 +25,9 @@ const testAsyncFunction = () => {
     } else {
       reject("Test Reject");
     }
-  }).catch((err) => err);
+  }).catch((err) => {
+    console.log("Error caught in testAsyncFunction: ", err);
+  });
 };
 
 testAsyncFunction()
