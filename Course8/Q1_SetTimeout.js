@@ -10,7 +10,6 @@ Example:
 
 const func = async () => {
   console.log("Printing before");
-  //Call your function here eg. sleep(3000)
   setTimeout(() => {
     console.log("Executed after 3 seconds");
   }, 3000);
