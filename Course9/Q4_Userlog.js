@@ -20,8 +20,6 @@ document.getElementById("userSearchKey").innerHTML = optionValue;
 const getUsers = async (url) => {
   let users = await loadData(url);
 
-  console.log(users);
-
   let li = tableData(usersArray);
 
   document.getElementById("table").innerHTML = li;
@@ -77,6 +75,7 @@ const sortUsers = () => {
   let sortedUsers = users.sort((a, b) => (a[sortkey] > b[sortkey] ? 1 : -1));
 
   document.getElementById("table").innerHTML = tableData(sortedUsers);
+  document.getElementById("searchBox").value = "";
 };
 
 //Function for getting specific user
@@ -86,10 +85,10 @@ const getUserSpecific = () => {
   let users = usersArray;
 
   let inputUser = users.filter((user) => {
-    return user[searchkey].toLowerCase().includes(reqUser.toLowerCase());
+    return JSON.stringify(user[searchkey])
+      .toLowerCase()
+      .includes(reqUser.toLowerCase());
   });
-
-  console.log(inputUser);
 
   let emptyObj = {
     email: "-",

@@ -17,17 +17,17 @@
   </head>
   <body onload="getUsers('https://reqres.in/api/users?page=2')">
     <div>
-      <button onClick="sortUsers()">Sort the Table</button>
       <select name="userSortKey" id="userSortKey"></select>
+      <button onClick="sortUsers()">Sort the Table</button>
     </div>
     <div>
-      <input
-        type="text"
-        placeholder="Enter Search Key"
-        id="searchBox"
-        onkeyup="getUserSpecific()"
-      />
       <select name="userSearchKey" id="userSearchKey"></select>
+      <input
+      type="text"
+      placeholder="Enter Search Key"
+      id="searchBox"
+      onkeyup="getUserSpecific()"
+    />
     </div>
 
     <table id="table" class="table table-striped"></table>
